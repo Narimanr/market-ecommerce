@@ -1,0 +1,71 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.category {
+	background: hslac(#fff, 1);
+	border-radius: system.$default-radius;
+	box-shadow: $box-shadow;
+	color: #000;
+	font-size: 1.8rem;
+	// max-width: 40rem; // control maximum size
+	z-index: 5;
+	min-width: 0;
+	border: 2px solid transparent;
+	transition: border 0.5s;
+
+	&:hover {
+		border: 2px solid hslac($clr-green);
+	}
+
+	@include desktop {
+		font-size: 1.2rem;
+	}
+
+	& > * {
+		padding: math.div(system.$default-gap, 2) system.$default-gap;
+	}
+
+	&Body {
+		z-index: 10 !important;
+
+		.imageBox {
+			min-height: 15rem;
+			position: relative;
+			margin-top: -5rem;
+
+			@include desktop {
+				max-height: 15rem;
+			}
+		}
+	}
+
+	&Footer {
+		span {
+			display: block;
+			z-index: 15;
+		}
+	}
+
+	span {
+		display: block;
+		&.title {
+			font-size: 2rem;
+			margin-top: 2rem;
+
+			@include desktop {
+				font-size: 1.6rem;
+			}
+		}
+
+		&.count {
+			font-size: 2rem;
+			color: hslac($clr-grey);
+
+			@include desktop {
+				font-size: 1.6rem;
+			}
+		}
+	}
+}

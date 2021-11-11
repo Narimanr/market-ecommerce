@@ -1,0 +1,21 @@
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.specialRow {
+	display: flex;
+	flex-direction: column;
+	gap: system.$default-gap;
+
+	@include desktop {
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+
+	> * {
+		flex: 1 1 100%;
+
+		@include desktop {
+			max-width: auto;
+		}
+	}
+}

@@ -1,0 +1,176 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.card {
+	background-color: hsl(0, 0%, 100%);
+	border-radius: system.$default-radius;
+	box-shadow: $box-shadow;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	@include desktop {
+		// min-width: 35rem;
+		// max-width: 40rem;
+		// min-height: 50rem;
+	}
+
+	& > * {
+		padding: math.div(system.$default-gap, 2) system.$default-gap;
+	}
+	// border: 1px solid black;
+
+	&Header {
+		padding-top: system.$default-gap;
+
+		.banner {
+			display: flex;
+			color: #fff;
+			padding: 0.75rem;
+			margin-right: -(system.$default-gap);
+			padding-right: system.$default-gap;
+			border-top-left-radius: math.div(system.$default-radius, 3);
+			border-bottom-left-radius: math.div(system.$default-radius, 3);
+			font-size: 1.6rem;
+			max-width: 35%;
+			display: block;
+
+			@include desktop {
+				font-size: 1.2rem;
+			}
+
+			&Off {
+				@extend .banner;
+				background-color: hslac($clr-orange);
+			}
+
+			&Special {
+				@extend .banner;
+				background-color: hslac($clr-blue);
+			}
+
+			&Popular {
+				@extend .banner;
+				background-color: hslac($clr-yellow);
+			}
+		}
+	}
+
+	&Body {
+		display: flex;
+		flex-direction: row;
+		gap: system.$default-gap;
+
+		@include desktop {
+			flex-direction: column;
+		}
+		& > * {
+			padding-bottom: system.$default-gap;
+		}
+		.imageBox {
+			min-height: 20rem;
+			width: 75%;
+			position: relative;
+
+			@include desktop {
+				width: 100%;
+			}
+		}
+
+		.text {
+			display: flex;
+			flex-direction: column;
+			gap: system.$default-gap;
+
+			.category {
+				display: block;
+				font-size: 1.6rem;
+				color: hslac($clr-grey);
+
+				@include desktop {
+					font-size: 1.4rem;
+					padding-top: system.$default-gap;
+				}
+			}
+			.title {
+				display: block;
+				font-size: 1.8rem;
+
+				@include desktop {
+					font-size: 1.6rem;
+				}
+			}
+		}
+	}
+
+	&Footer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 15rem;
+		flex-wrap: wrap;
+
+		@include desktop {
+			min-height: 8rem;
+		}
+
+		.off {
+			display: block;
+		}
+		.price {
+			display: flex;
+			flex-direction: column;
+			justify-content: baseline;
+			font-size: 1.6rem;
+			font-weight: 500;
+			// line-height: 2.8rem;
+
+			@include desktop {
+				font-size: 1.4rem;
+			}
+
+			.old {
+				text-decoration: line-through;
+				color: hslac($clr-grey);
+			}
+
+			.current {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: math.div(system.$default-gap, 3);
+
+				.number {
+					font-size: 2.8rem;
+					@include desktop {
+						font-size: 2.8rem;
+					}
+				}
+
+				.currency {
+					color: hslac($clr-red);
+				}
+			}
+		}
+		.cartButton {
+			background-color: hslac($clr-dark-blue);
+			color: hslac(#fff);
+			border-radius: 50%;
+			width: 5rem;
+			height: 5rem;
+			border: none;
+			cursor: pointer;
+			transition: background-color 0.5s ease-in-out, color 0.2s,
+				transform 0.5s ease-in-out;
+
+			&:hover {
+				background-color: hslac($clr-blue, 80%);
+				transform: translateY(-5px);
+				color: hslac(#fff, 95%);
+			}
+		}
+	}
+}

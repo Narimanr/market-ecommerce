@@ -1,0 +1,84 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.special {
+	background: hslac($clr-blue);
+	border-radius: system.$default-radius;
+	box-shadow: $box-shadow;
+	color: #fff;
+	font-size: 1.6rem;
+	position: relative;
+	overflow: hidden;
+	// max-width: 40rem; // control maximum size
+	padding: math.div(system.$default-gap, 2) system.$default-gap;
+	z-index: 5;
+	min-width: 0;
+
+	@include desktop {
+		font-size: 1.8rem;
+	}
+
+	// & > * {
+	// 	padding: math.div(system.$default-gap, 2) system.$default-gap;
+	// }
+
+	&Green {
+		@extend .special;
+		background: hslac($clr-green);
+	}
+
+	&Grey {
+		@extend .special;
+		background: hslac($clr-grey);
+	}
+
+	&Orange {
+		@extend .special;
+		background: hslac($clr-orange);
+	}
+
+	&Purple {
+		@extend .special;
+		background: hslac($clr-purple);
+	}
+
+	&DarkBlue {
+		@extend .special;
+		background: hslac($clr-dark-blue);
+	}
+
+	&Header {
+		z-index: 10 !important;
+		padding-top: system.$default-gap;
+		position: relative;
+	}
+
+	&Body {
+		position: relative;
+		z-index: 10 !important;
+
+		.imageBox {
+			min-height: 17.5rem;
+			position: relative;
+
+			@include desktop {
+				max-height: 18rem;
+				margin-bottom: -(system.$default-gap * 2);
+				margin-left: -(system.$default-gap * 2);
+			}
+		}
+	}
+
+	span {
+		display: block;
+		&.title {
+			font-size: 2.2rem;
+
+			@include desktop {
+				font-size: 2.4rem;
+			}
+		}
+	}
+}

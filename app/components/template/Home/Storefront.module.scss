@@ -1,0 +1,167 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.StorefrontGrid {
+	direction: rtl;
+	display: grid;
+	// grid-auto-rows: minmax(1fr, max-content);
+	grid-auto-rows: auto;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-areas:
+		"navbar"
+		"hero"
+		"category"
+		"sale"
+		"special"
+		"browse"
+		"why"
+		"recommended"
+		"special-2"
+		"scroll"
+		"footer";
+
+	background-color: hslac($background-color);
+
+	// all items be 100%;
+	& > * {
+		// width: 100vw;
+		padding: (system.$default-gap * 2) system.$mobile-padding;
+
+		@include desktop {
+			padding: (system.$default-gap * 2) system.$desktop-padding;
+		}
+	}
+}
+
+.hero {
+	grid-area: hero;
+	padding: 0;
+}
+
+.category {
+	grid-area: category;
+	padding: 0;
+}
+
+.sale {
+	grid-area: sale;
+}
+
+.special {
+	grid-area: special;
+}
+
+.browse {
+	grid-area: browse;
+}
+
+.why {
+	grid-area: why;
+	position: relative;
+	padding: 0;
+	margin-top: system.$default-gap * 2;
+
+	&Background {
+		background: linear-gradient(
+				to right,
+				hslac($clr-blue, 0.8) 70%,
+				hslac($clr-blue, 1)
+			),
+			url("/images/hero/maddi-bazzocco-Hz4FAtKSLKo-unsplash.jpg");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		color: #fff;
+		padding: system.$default-gap * 2 system.$mobile-padding;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include desktop {
+			padding: system.$default-gap * 2 system.$desktop-padding;
+		}
+	}
+
+	&Text {
+		display: flex;
+		flex-direction: column;
+		font-size: 2.4rem;
+
+		@include desktop {
+			font-size: 2.8rem;
+		}
+
+		p {
+			font-size: 1.8rem;
+			margin: system.$default-gap 0;
+
+			@include desktop {
+				font-size: 2rem;
+			}
+		}
+
+		ul {
+			display: grid;
+			gap: system.$default-gap * 2;
+			grid-template-columns: repeat(1, 1fr);
+			font-size: 2rem;
+			list-style: none;
+			margin-top: system.$default-gap * 2;
+
+			@include desktop {
+				grid-template-columns: repeat(2, minmax(15rem, 1fr));
+			}
+			li {
+				display: flex;
+				align-items: center;
+				gap: math.div(system.$default-gap, 2);
+
+				i {
+					color: hslac($clr-green);
+				}
+			}
+		}
+	}
+
+	&Overlay {
+		display: none;
+
+		@include tab-port {
+			background: url("/images/pngkey.com-indian-students-png-images-3638423.png");
+			background-size: contain;
+			background-repeat: no-repeat;
+			position: absolute;
+			z-index: 10;
+			display: block;
+			height: 32.5rem;
+			width: 35rem;
+			bottom: 0;
+			left: system.$mobile-padding;
+		}
+
+		@include desktop {
+			height: 35rem;
+			width: 40rem;
+			left: system.$desktop-padding;
+		}
+	}
+}
+
+.recommended {
+	grid-area: recommended;
+}
+
+.specialAgain {
+	grid-area: special-2;
+}
+
+.scroll {
+	grid-area: scroll;
+}
+
+.footer {
+	grid-area: footer;
+	padding: 0;
+}

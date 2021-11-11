@@ -1,0 +1,75 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.categoryGrid {
+	padding: (system.$default-gap * 2) system.$mobile-padding;
+
+	background-color: #fff;
+	background-image: url("/patterns/topography.svg");
+
+	@include desktop {
+		padding: (system.$default-gap * 2) system.$desktop-padding;
+	}
+
+	.title {
+		text-align: center;
+		span {
+			color: hslac($clr-green);
+			font-size: 2rem;
+		}
+		h2 {
+			font-size: 2.8rem;
+			margin-bottom: system.$default-gap;
+		}
+	}
+
+	.gridDisplay {
+		display: grid;
+		gap: system.$default-gap;
+		grid-template-columns: repeat(1, minmax(20rem, 1fr));
+		grid-template-rows: auto;
+
+		@include tab-port {
+			grid-template-columns: repeat(2, minmax(10rem, 1fr));
+			justify-items: center;
+		}
+
+		@include desktop {
+			grid-template-columns: repeat(3, minmax(30rem, 1fr));
+			justify-items: center;
+		}
+
+		& > * {
+			width: 100%;
+			min-width: 0;
+
+			@include desktop {
+				width: 100%;
+			}
+		}
+	}
+
+	.browse {
+		background: hslac($clr-green);
+		border-radius: system.$default-radius;
+		box-shadow: $box-shadow;
+		color: #fff;
+		font-size: 1.4rem;
+		// max-width: 40rem; // control maximum size
+		min-width: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include desktop {
+			font-size: 1.6rem;
+		}
+
+		span {
+			display: inline-block;
+			margin-left: 1rem;
+		}
+	}
+}
