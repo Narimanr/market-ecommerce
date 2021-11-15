@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import Image from 'next/image';
+
 import styles from './Footer.module.scss';
 
 export default function Footer() {
@@ -11,13 +13,17 @@ export default function Footer() {
                 </div>
                 <div className={styles.links}>
                     <ul>
-                        <li>خانه</li>
+                        <li className={styles.active}>
+                            <Link href="/">
+                                خانه
+                            </Link>
+                        </li>
                         <li>ارتباط با ما</li>
                         <li>درباره ما</li>
                     </ul>
                 </div>
                 <div className={styles.description}>
-                    <p>ارايه دهنده بروزترین محصولات مدرن دنیای دیجیتال از سال ۱۴۰۰.  هر آنچه که می‌خواهید با شما فقط یک کلیک فاصله دارد. به همراه خدمات پشتیبانی ۲۴ ساعنه در سول روز. انتخاب هوشمند، انتحاب همیشگی.</p>
+                    <p>ارايه دهنده بروزترین محصولات مدرن دنیای دیجیتال از سال ۱۴۰۰.  هر آنچه که می‌خواهید با شما فقط یک کلیک فاصله دارد. به همراه خدمات و پشتیبانی ۲۴ ساعته در طول روز. انتخاب هوشمند، انتحاب همیشگی.</p>
                         <div className={styles.socials}>
                             <i className='bx bxl-google bx-md'></i>
                             <i className='bx bxl-telegram bx-md'></i>

@@ -4,6 +4,7 @@
 @use "/app/styles/system";
 
 .footer {
+	direction: rtl;
 	background-color: hslac($clr-dark-blue);
 	padding: system.$default-gap system.$mobile-padding;
 	color: hslac($clr-grey);
@@ -101,6 +102,7 @@
 }
 
 .copyright {
+	direction: rtl;
 	background-color: hslac($clr-dark-blue);
 	color: hslac($clr-grey);
 	font-size: 1.2rem;

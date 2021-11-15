@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 
-import cardStyle from './Card.module.scss';
+import cardStyle from './FrequentCard.module.scss';
 
 
 export interface iCard {
@@ -15,50 +15,15 @@ export interface iCard {
     banner?: string
 };
 
-export const enum Banner  {
-    Off = 'off',
-    Special = 'special',
-    Popular = 'popular'
-};
 
 
-
-export default function Card(props: iCard) {
-  var bannerElement;
-      switch (props.banner) {
-        case Banner.Off:
-          bannerElement = (
-            <div className={cardStyle.bannerOff}>
-              <span>تخفیف خورده</span>
-            </div>
-          );
-           break;
-        case Banner.Special:
-          bannerElement = (
-            <div className={cardStyle.bannerSpecial}>
-              <span>ویژه</span>
-            </div>
-          );
-          break;
-        case Banner.Popular:
-          bannerElement = (
-            <div className={cardStyle.bannerPopular}>
-              <span>محبوب</span>
-            </div>
-          );
-          break;
-        default:
-          bannerElement = null;
-  };
-
-
+export default function FrequentCard(props: iCard) {
   return (
       <Link href={`/product/${encodeURIComponent(props.id)}`}>
       <a href={`/product/${encodeURIComponent(props.id)}`}>
         <div className={cardStyle.card}>
-            <div className={cardStyle.cardHeader}>
-            {bannerElement}
-            </div>
+          <div className={cardStyle.cardHeader}>
+          </div>
             <div className={cardStyle.cardBody}>
               <div className={cardStyle.imageBox}>
               <Image src={props.image} alt="product image" layout="fill" objectFit="contain" />

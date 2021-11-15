@@ -7,14 +7,13 @@ import { iCategory } from '@/element/CategoryCard/CategoryCard';
 import { iSpecialCard} from '@/element/SpecialCard/SpecialCard';
 
 // Layouts
-import Navbar from '@/components/layout/Navbar/Navbar';
 import Hero from '@/layout/Hero/Hero';
 import CategoryGrid from '@/layout/CategoryGrid/CategoryGrid';
 import ProductRow from '@/layout/ProductRow/ProductRow';
 import SpecialRow from '@/layout/SpecialRow/SpecialRow';
 import ProductGrid from '@/layout/ProductGrid/ProductGrid';
 import ProductCarousel from '@/layout/ProductCarousel/ProductCarousel';
-import Footer from '@/layout/Footer/Footer';
+
 
 
 interface PageProps {
@@ -28,10 +27,7 @@ interface PageProps {
 export default function Storefront(props: PageProps) {
 
     return (
-      <main className={styles.StorefrontGrid}>
-        
-        <Navbar />
-
+      <div className={styles.StorefrontGrid}>
         <div className={styles.hero}>
           <Hero items={props.slides} />
         </div>
@@ -94,10 +90,7 @@ export default function Storefront(props: PageProps) {
           <ProductCarousel title="بهترین‌های ماه" items={props.items}  />
         </div>
       
-        <div className={styles.footer}>
-          <Footer />
-        </div>
-      </main>
+      </div>
     );
 
 }

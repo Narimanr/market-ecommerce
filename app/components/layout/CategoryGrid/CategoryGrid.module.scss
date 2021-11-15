@@ -4,10 +4,10 @@
 @use "/app/styles/system";
 
 .categoryGrid {
-	padding: (system.$default-gap * 2) system.$mobile-padding;
-
 	background-color: #fff;
 	background-image: url("/patterns/topography.svg");
+
+	padding: (system.$default-gap * 2) system.$mobile-padding;
 
 	@include desktop {
 		padding: (system.$default-gap * 2) system.$desktop-padding;

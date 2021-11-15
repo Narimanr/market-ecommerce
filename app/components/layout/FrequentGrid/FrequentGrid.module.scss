@@ -1,0 +1,109 @@
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.frequentGrid {
+	h2 {
+		font-size: 2.8rem;
+		margin-bottom: system.$default-gap;
+	}
+
+	.gridDisplay {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(20rem, 1fr));
+		grid-template-rows: auto;
+		gap: system.$default-gap;
+
+		@include tab-port {
+			grid-template-columns: repeat(2, minmax(10rem, 1fr));
+			justify-items: center;
+		}
+
+		@include desktop {
+			grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+			justify-items: center;
+			gap: 0;
+		}
+
+		& > * {
+			width: 100%;
+			min-width: 0;
+
+			@include desktop {
+				width: 100%;
+			}
+		}
+
+		.item {
+			// border: 1px solid black;
+			background-color: hslac(white);
+			position: relative;
+			box-shadow: $box-shadow;
+			border-radius: system.$default-radius;
+
+			.plus {
+				display: none;
+			}
+
+			@include desktop {
+				&:not(:last-of-type) {
+					border-left: 0.2rem dashed hslac($clr-grey, 80%);
+					&:after,
+					&:before {
+						content: "";
+						position: absolute;
+						display: block;
+						width: system.$default-radius * 2;
+						height: system.$default-radius * 2;
+						background: hsl(0, 0%, 97%);
+						border-radius: 50%;
+						left: -(system.$default-radius);
+					}
+					&:before {
+						top: -(system.$default-radius);
+					}
+
+					&:after {
+						bottom: -(system.$default-radius);
+					}
+
+					.plus {
+						position: absolute;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						height: 4rem;
+						width: 4rem;
+						top: 10.5rem;
+						left: -2rem;
+						font-size: 2rem;
+						border: 1px solid hslac($clr-grey, 20%);
+						border-radius: 50%;
+						background-color: hslac($background-white);
+						z-index: 5;
+					}
+				}
+
+				&:not(:first-of-type) {
+					&:after,
+					&:before {
+						content: "";
+						position: absolute;
+						display: block;
+						width: system.$default-radius * 2;
+						height: system.$default-radius * 2;
+						background: hslac($background-grey);
+						border-radius: 50%;
+						right: -(system.$default-radius);
+					}
+					&:before {
+						top: -(system.$default-radius);
+					}
+
+					&:after {
+						bottom: -(system.$default-radius);
+					}
+				}
+			}
+		}
+	}
+}

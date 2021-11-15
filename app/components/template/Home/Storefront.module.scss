@@ -22,7 +22,7 @@
 		"scroll"
 		"footer";
 
-	background-color: hslac($background-color);
+	background-color: hslac($background-white);
 
 	// all items be 100%;
 	& > * {
@@ -159,9 +159,4 @@
 
 .scroll {
 	grid-area: scroll;
-}
-
-.footer {
-	grid-area: footer;
-	padding: 0;
 }

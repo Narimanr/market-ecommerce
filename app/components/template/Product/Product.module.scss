@@ -1,0 +1,45 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.ProductGrid {
+	direction: rtl;
+	display: grid;
+	// grid-auto-rows: minmax(1fr, max-content);
+	grid-auto-rows: auto;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-areas:
+		"navbar"
+		"info"
+		"together"
+		"related"
+		"footer";
+
+	background-color: hslac($background-grey);
+
+	// all items be 100%;
+	& > * {
+		// width: 100vw;
+		padding: (system.$default-gap * 2) system.$mobile-padding;
+
+		@include desktop {
+			padding: (system.$default-gap * 2) system.$desktop-padding;
+		}
+	}
+
+	.info {
+		grid-area: info;
+	}
+
+	.together {
+		grid-area: together;
+
+		border-bottom: 1px solid hslac($clr-grey, 30%);
+	}
+
+	.related {
+		grid-area: related;
+		background-color: hslac($background-white);
+	}
+}

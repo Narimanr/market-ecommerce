@@ -46,7 +46,7 @@ export default function ProductCarousel(props: Props) {
                 {props.items.map(item => {
                     return (
                         <SwiperSlide key={item.id} className={rowStyle.swiperSlide}>
-                            <Card  id={item.id} title={item.title} category={item.category} price={item.price} off={item.off} image={item.image} banner={Banner.Popular}  />
+                            <Card  id={item.id} title={item.title} category={item.category} price={item.price} oldPrice={item.oldPrice}  image={item.image} banner={Banner.Popular}  />
                          </SwiperSlide>
                     );
                 })}
