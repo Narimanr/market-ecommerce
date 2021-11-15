@@ -17,7 +17,6 @@ interface PageProps {
     tags: string;
     frequentItems?: iCard[];
     similarItems?: iCard[];
-    
 };
 
 
