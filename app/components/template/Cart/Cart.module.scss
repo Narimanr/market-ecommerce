@@ -1,0 +1,149 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.CartGrid {
+	direction: rtl;
+	display: grid;
+	// grid-auto-rows: minmax(1fr, max-content);
+	grid-auto-rows: auto;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-areas: "items";
+
+	background-color: hslac($background-grey);
+
+	// all items be 100%;
+	& > * {
+		// width: 100vw;
+		padding: (system.$default-gap * 2) system.$mobile-padding;
+
+		@include desktop {
+			padding: (system.$default-gap * 2) system.$desktop-padding;
+		}
+	}
+
+	.items {
+		grid-area: items;
+
+		.wrapper {
+			background-color: hslac($background-white);
+			border-radius: system.$default-radius;
+			padding: system.$default-gap;
+			box-shadow: $box-shadow;
+			display: flex;
+			flex-direction: column;
+			gap: system.$default-gap;
+
+			@include desktop {
+				padding: system.$default-gap * 2;
+				flex-direction: row;
+			}
+
+			.cart {
+				flex-basis: 66.66%;
+				.back {
+					display: flex;
+					align-items: center;
+					font-size: 1.6rem;
+					gap: math.div(system.$default-gap, 3);
+					border-bottom: 1px solid hslac($clr-grey, 0.3);
+					padding-bottom: system.$default-gap;
+					margin-bottom: system.$default-gap;
+
+					@include desktop {
+						flex-basis: 1;
+					}
+
+					i {
+						font-size: 2rem;
+					}
+				}
+
+				.header {
+					font-size: 2.8rem;
+					display: block;
+					margin-bottom: system.$default-gap;
+				}
+
+				.item {
+					margin-bottom: system.$default-gap * 2;
+				}
+			}
+
+			.summary {
+				flex-basis: 33.33%;
+				background-color: hslac($clr-violet);
+				border-radius: system.$default-radius;
+				padding: system.$default-gap;
+				height: max-content;
+				color: hslac(#fff, 0.8);
+
+				font-size: 1.6rem;
+
+				.rows {
+					& > * {
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						align-items: center;
+						margin-bottom: system.$default-gap;
+					}
+
+					.number {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						gap: 1rem;
+						color: #fff;
+						font-size: 1.8rem;
+					}
+
+					.currency {
+						font-size: 1.4rem;
+					}
+				}
+
+				.proceedButton {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: math.div(system.$default-gap, 2)
+						system.$default-gap;
+					width: 100%;
+					min-height: 7rem;
+					background-color: hslac($clr-jade);
+					color: hslac(#fff);
+					border-radius: system.$default-radius;
+					border: none;
+					cursor: pointer;
+					transition: background-color 0.2s ease-in-out, color 0.2s;
+					font-size: 1.8rem;
+
+					&:hover {
+						background-color: hslac($clr-jade, 80%);
+						color: hslac(#fff, 95%);
+					}
+
+					& > * {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+					}
+
+					.price {
+						gap: 0.5rem;
+					}
+
+					.text {
+						gap: 1rem;
+
+						i {
+							font-size: 2.4rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

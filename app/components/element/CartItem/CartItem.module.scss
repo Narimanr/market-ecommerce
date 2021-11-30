@@ -1,0 +1,196 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.cartItem {
+	background-color: hsl(0, 0%, 100%);
+	border-radius: system.$default-radius;
+	box-shadow: $cart-item-shadow;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: math.div(system.$default-gap, 2) system.$default-gap;
+	transition: box-shadow 0.3s ease;
+
+	& > * {
+		margin-bottom: math.div(system.$default-gap, 2);
+
+		@include desktop {
+			margin-bottom: none;
+		}
+	}
+
+	&:hover {
+		box-shadow: $cart-item-hover-shadow;
+	}
+
+	@include desktop {
+		flex-direction: row;
+	}
+
+	.info {
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: space-around;
+		gap: system.$default-gap;
+
+		@include desktop {
+			flex-direction: row;
+		}
+
+		.imageBox {
+			min-height: 10rem;
+			min-width: 20rem;
+			position: relative;
+		}
+
+		.text {
+			display: flex;
+			flex-direction: column;
+			gap: math.div(system.$default-gap, 2);
+			@include desktop {
+				gap: system.$default-gap;
+			}
+
+			.category {
+				display: block;
+				font-size: 1.6rem;
+				color: hslac($clr-grey);
+
+				@include desktop {
+					font-size: 1.4rem;
+					padding-top: system.$default-gap;
+				}
+			}
+			.title {
+				display: block;
+				font-size: 2rem;
+
+				@include desktop {
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+
+	.priceSection {
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: system.$default-gap;
+		flex-wrap: wrap;
+		font-size: 1.2rem;
+		position: relative;
+
+		@include desktop {
+			flex-direction: row;
+			align-items: center;
+			gap: (system.$default-gap * 2);
+		}
+
+		.quantity {
+			display: flex;
+			flex-direction: column;
+			gap: math.div(system.$default-gap, 2);
+
+			.buttons {
+				height: 4rem;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				border: 1px solid hslac($clr-grey, 30%);
+				border-radius: math.div(system.$default-radius, 2);
+				overflow: hidden;
+
+				& > * {
+					align-items: center;
+					justify-content: center;
+					width: 4rem;
+				}
+
+				button {
+					border: none;
+					display: flex;
+					height: 4rem;
+					cursor: pointer;
+					background-color: hslac($clr-grey, 20%);
+
+					&:hover {
+						background-color: hslac($clr-dark-blue, 30%);
+					}
+				}
+
+				span {
+					display: flex;
+				}
+			}
+		}
+
+		.off {
+			display: block;
+		}
+		.price {
+			display: flex;
+			flex-direction: column;
+			font-size: 1.6rem;
+			font-weight: 500;
+			// line-height: 2.8rem;
+
+			@include desktop {
+				font-size: 1.4rem;
+			}
+
+			.old {
+				text-decoration: line-through;
+				color: hslac($clr-grey);
+			}
+
+			.current {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: math.div(system.$default-gap, 3);
+
+				.number {
+					font-size: 2.8rem;
+					@include desktop {
+						font-size: 2.8rem;
+					}
+				}
+
+				.currency {
+					color: hslac($clr-red);
+				}
+			}
+		}
+
+		.delete {
+			border: none;
+			cursor: pointer;
+			background-color: transparent;
+			font-size: 2.5rem;
+			align-self: flex-end;
+
+			position: absolute;
+			bottom: 0;
+			left: system.$default-gap;
+
+			@include desktop {
+				align-self: auto;
+				position: unset;
+			}
+			i {
+				color: hslac($clr-grey);
+				transition: color 0.3s ease;
+			}
+
+			&:hover {
+				i {
+					color: hslac($clr-red);
+				}
+			}
+		}
+	}
+}

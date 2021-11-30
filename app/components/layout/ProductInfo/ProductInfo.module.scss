@@ -5,11 +5,11 @@
 .infoGrid {
 	display: grid;
 	gap: system.$default-gap;
-	grid-template-columns: repeat(1, minmax(20rem, 1fr));
+	grid-template-columns: repeat(auto, minmax(20rem, 1fr));
 	grid-auto-rows: minmax(50rem, 1fr);
 	background-color: hslac($background-white);
 	border-radius: system.$default-radius;
-	padding: system.$default-gap * 2;
+	padding: system.$default-gap;
 	box-shadow: $box-shadow;
 
 	@include desktop {
@@ -22,6 +22,12 @@
 	}
 
 	.image {
+		order: 2;
+
+		@include desktop {
+			order: 1;
+		}
+
 		.imageBox {
 			min-height: 40rem;
 			width: 100%;
@@ -31,10 +37,15 @@
 
 	.info {
 		display: flex;
+		order: 1;
 		flex-direction: column;
 		justify-content: space-between;
-		border-right: 1px solid hslac($clr-grey, 30%);
 		padding-right: system.$default-gap * 2;
+
+		@include desktop {
+			order: 2;
+			border-right: 1px solid hslac($clr-grey, 30%);
+		}
 
 		.infoHeader {
 			.breadcrumbs {
@@ -84,9 +95,15 @@
 
 		.addProduct {
 			display: flex;
+			flex-direction: column;
 			gap: system.$default-gap;
+			align-items: flex-start;
 			font-size: 1.4rem;
-			align-items: flex-end;
+
+			@include desktop {
+				flex-direction: row;
+				align-items: flex-end;
+			}
 
 			.quantity {
 				display: flex;
@@ -130,7 +147,9 @@
 				display: flex;
 				align-items: center;
 				gap: math.div(system.$default-gap, 2);
-				padding: system.$default-gap system.$default-gap;
+				padding: math.div(system.$default-gap, 2) system.$default-gap;
+				min-width: 20rem;
+				max-height: 6rem;
 				background-color: hslac($clr-orange);
 				color: hslac(#fff);
 				border-radius: system.$default-radius;
@@ -175,6 +194,7 @@
 	}
 
 	.experience {
+		order: 3;
 		display: flex;
 		flex-direction: column;
 		gap: system.$default-gap;

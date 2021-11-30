@@ -23,6 +23,7 @@ export default function FrequentGrid(props: Props) {
                             id={item.id}
                             title={item.title}
                             category={item.category}
+                            catSlug={item.catSlug}
                             price={item.price}
                             oldPrice={item.oldPrice}
                             image={item.image}

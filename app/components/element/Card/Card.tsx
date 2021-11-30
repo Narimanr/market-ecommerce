@@ -8,6 +8,7 @@ import cardStyle from './Card.module.scss';
 export interface iCard {
     id: string, 
     category: string,
+    catSlug: string,
     title: string,
     price: string,
     oldPrice?: string,
@@ -53,8 +54,10 @@ export default function Card(props: iCard) {
 
 
   return (
-      <Link href={`/product/${encodeURIComponent(props.id)}`}>
-      <a href={`/product/${encodeURIComponent(props.id)}`}>
+    <Link
+      href={`/${encodeURIComponent(props.catSlug)}/${encodeURIComponent(props.id)}`}
+    >
+      <a href={`/${encodeURIComponent(props.catSlug)}/${encodeURIComponent(props.id)}/`}>
         <div className={cardStyle.card}>
             <div className={cardStyle.cardHeader}>
             {bannerElement}

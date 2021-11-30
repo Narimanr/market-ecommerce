@@ -14,6 +14,7 @@ interface PageProps {
     oldPrice?: string;
     description: string;
     category: string;
+    catSlug: string;
     tags: string;
     frequentItems?: iCard[];
     similarItems?: iCard[];
@@ -31,6 +32,7 @@ export default function Product(props: PageProps) {
                     oldPrice={props.oldPrice}
                     description={props.description}
                     category={props.category}
+                    catSlug={props.catSlug}
                     tags={props.tags}
                 />
             </div>

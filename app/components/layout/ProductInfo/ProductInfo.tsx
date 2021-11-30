@@ -11,6 +11,7 @@ interface Props {
     oldPrice?: string,
     tags: string,
     category: string;
+    catSlug: string;
     description: string
 }
 
@@ -47,8 +48,10 @@ export default function ProductInfo(props: Props) {
                             </Link>        
                         </li>
                         <li>
-                            <Link href="/">
-                                <a href="/">{props.category}</a>
+                            <Link href={`/${props.catSlug}`}>
+                                <a href={`/${props.catSlug}/`}>
+                                    {props.category}
+                                </a>
                            </Link>        
                         </li>
                         <li>{props.title}</li>
@@ -77,10 +80,13 @@ export default function ProductInfo(props: Props) {
                             </button>
                         </div>
                     </div>
-                    <button className={styles.cartButton}>
-                        <i className='bx bxs-shopping-bag-alt bx-md'></i>
-                        <span>اضافه کردن به سبد خرید</span>
-                    </button>
+                    <Link href="/cart">
+                        <button className={styles.cartButton}>
+                            <i className='bx bxs-shopping-bag-alt bx-md'></i>
+                            <span>اضافه کردن به سبد خرید</span>
+                        </button>
+                    </Link>
+                   
                 </div>
 
                 <hr />

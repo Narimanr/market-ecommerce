@@ -38,41 +38,49 @@ export const DUMMY_SLIDES: Slide[] = [
 export const DUMMY_CATEGORIES: iCategory[] = [
     {
       title: 'سوپر مارکتی',
+      slug: 'supermarket',
       count: '21',
       image: '/images/categories/basket.png'
     },
     {
       title: 'ادویه‌جات',
+      slug: 'spices',
       count: '24',
       image: '/images/categories/spices.png',
       },
      {
       title: 'گوشت',
+      slug: 'meat',
       count: '8',
       image: '/images/categories/meat.png',
       },
       {
         title: 'شکلات',
+        slug: 'chocolate',
         count: '19',
         image: '/images/categories/nutella.png',
       },
       {
         title: 'نوشیدنی',
+        slug: 'drink',
         count: '32',
         image: '/images/categories/red-bull-can.png',
       },
       {
         title: 'سس',
+        slug: 'sauce',
         count: '52',
         image: '/images/categories/ketchup.png',
       },
       {
         title: 'قهوه',
+        slug: 'coffee',
         count: '18',
         image: '/images/categories/cup-of-coffee.png',
       },
       {
         title: 'غذای حیوانات',
+        slug: 'pet-food',
         count: '36',
         image: '/images/categories/dogmeat.png',
       },
@@ -84,6 +92,7 @@ export const DUMMY_ITEMS: iCard[] = [
       title: 'بسته ۶تایی دونات',
       image: '/images/products/donut.png',
       category: 'نان و شیرینی',
+      catSlug: 'bread',
       price: '۵۰،۰۰۰',
       oldPrice: '۶۵،۰۰۰'
     },
@@ -92,7 +101,9 @@ export const DUMMY_ITEMS: iCard[] = [
       title: 'گونی برنج',
       image: '/images/products/rice.png',
       category: 'سوپر مارکتی',
+      catSlug: 'supermarket',
       price: '۱،۱۴۵،۰۰۰',
+      oldPrice: '۱،۱۸۰،۰۰۰'
       
     },
     {
@@ -100,6 +111,7 @@ export const DUMMY_ITEMS: iCard[] = [
       title: 'سس باربیکیو هاینز',
       image: '/images/products/heinz-bbq.png',
       category: 'سوپر مارکتی',
+      catSlug: 'supermarket',
       price: '۸۳،۰۰۰'
     },
     {
@@ -107,6 +119,7 @@ export const DUMMY_ITEMS: iCard[] = [
       title: 'لیپتون آیس تی پک ۱۰ تایی',
       image: '/images/products/lipton-ice-tea.png',
       category: 'سوپر مارکتی',
+      catSlug: 'supermarket',
       price: '۴۵،۰۰۰'
     }
   ];
@@ -138,7 +151,7 @@ export const DUMMY_SPECIAL_ITEMS: iSpecialCard[] = [
     },
   ];
 
-export  const DUMMY_SPECIAL_ITEMS_2: iSpecialCard[] = [
+export const DUMMY_SPECIAL_ITEMS_2: iSpecialCard[] = [
      {
       title: 'جعبه دوریتوس ۶ تایی',
       subtitle: 'تند و آتشین',

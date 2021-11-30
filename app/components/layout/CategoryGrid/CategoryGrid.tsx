@@ -18,7 +18,7 @@ export default function CategoryGrid(props: Props) {
             <div className={gridStyle.gridDisplay}>
                 {props.items.map(item => {
                     return (
-                        <CategoryCard key={item.title} title={item.title} image={item.image} count={item.count}  />
+                        <CategoryCard key={item.title} title={item.title} slug={item.slug} image={item.image} count={item.count}  />
                    );
                 })}
 

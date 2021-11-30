@@ -1,0 +1,31 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.CategoryGrid {
+	direction: rtl;
+	display: grid;
+	// grid-auto-rows: minmax(1fr, max-content);
+	grid-auto-rows: auto;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-areas:
+		"info"
+		"together"
+		"related";
+
+	background-color: hslac($background-grey);
+
+	// all items be 100%;
+	& > * {
+		padding: (system.$default-gap * 2) system.$mobile-padding;
+
+		@include desktop {
+			padding: (system.$default-gap * 2) system.$desktop-padding;
+		}
+	}
+
+	.info {
+		grid-area: info;
+	}
+}

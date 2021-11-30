@@ -17,7 +17,7 @@ export default function ProductRow(props: Props) {
             <div className={rowStyle.rowDisplay}>
                 {props.items.map(item => {
                     return (
-                        <Card key={item.id} id={item.id} title={item.title} category={item.category} price={item.price} oldPrice={item.oldPrice}  image={item.image} banner={Banner.Off}  />
+                        <Card key={item.id} id={item.id} title={item.title} category={item.category} catSlug={item.catSlug} price={item.price} oldPrice={item.oldPrice}  image={item.image} banner={Banner.Off}  />
                     );
                 })}
             </div>

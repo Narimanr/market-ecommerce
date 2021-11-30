@@ -30,6 +30,7 @@ const ProductPage: NextPage = () => {
           oldPrice={selectedItem.oldPrice}
           description="blah blah"
           category={selectedItem.category}
+          catSlug={selectedItem.catSlug}
           tags="1,2,3"
           frequentItems={frequentItems}
           similarItems={similarItems}
