@@ -78,31 +78,7 @@
 				padding: system.$default-gap;
 				height: max-content;
 				color: hslac(#fff, 0.8);
-
 				font-size: 1.6rem;
-
-				.rows {
-					& > * {
-						display: flex;
-						flex-direction: row;
-						justify-content: space-between;
-						align-items: center;
-						margin-bottom: system.$default-gap;
-					}
-
-					.number {
-						display: flex;
-						flex-direction: row;
-						align-items: center;
-						gap: 1rem;
-						color: #fff;
-						font-size: 1.8rem;
-					}
-
-					.currency {
-						font-size: 1.4rem;
-					}
-				}
 
 				.proceedButton {
 					display: flex;

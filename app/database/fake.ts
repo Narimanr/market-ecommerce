@@ -169,4 +169,18 @@ export const DUMMY_SPECIAL_ITEMS_2: iSpecialCard[] = [
       subtitle: '۱۰۰٪ طبیعی',
       image: '/images/products/salami.png',
     }
-  ];
+];
+  
+export const FAKE_INVOICE = {
+        invoiceId: '123456789',
+        email: 'john.wick@vorna.com',
+        name: 'جان ویک',
+        phone: '09123456789',
+        time: '۱۸:۲۴',
+        date: '۱۴۰۰/۰۱/۳۰',
+        address: 'تهران، میدان آزادی، اون سمت میدان، خیابان اول، کوچه دوم، پلاک سوم، طبقه چهارم، واحد پنجم',
+        subtotal: '۱،۳۰۸،۰۰۰',
+        shipping: '۵۰،۰۰۰',
+        discount: '۳۵،۰۰۰',
+        total: '۱،۳۵۸،۰۰۰',
+}

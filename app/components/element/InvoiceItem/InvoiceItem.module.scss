@@ -1,0 +1,136 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.invoiceItem {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: math.div(system.$default-gap, 2) system.$default-gap;
+	transition: box-shadow 0.3s ease;
+	box-shadow: $cart-item-shadow;
+	border-radius: system.$default-radius;
+	margin-bottom: 1rem;
+
+	& > * {
+		margin-bottom: math.div(system.$default-gap, 2);
+
+		@include desktop {
+			margin-bottom: none;
+		}
+	}
+
+	&:hover {
+		box-shadow: $cart-item-hover-shadow;
+	}
+
+	@include desktop {
+		flex-direction: row;
+	}
+
+	.info {
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: space-around;
+		gap: system.$default-gap;
+
+		@include desktop {
+			flex-direction: row;
+		}
+
+		.imageBox {
+			min-height: 10rem;
+			min-width: 10rem;
+			position: relative;
+
+			@include desktop {
+				min-height: 2.5rem;
+				min-width: 5rem;
+			}
+		}
+
+		.text {
+			display: flex;
+			flex-direction: column;
+			gap: math.div(system.$default-gap, 2);
+			@include desktop {
+				gap: math.div(system.$default-gap, 4);
+			}
+
+			.category {
+				display: block;
+				font-size: 1.6rem;
+				color: hslac($clr-grey);
+
+				@include desktop {
+					font-size: 1.4rem;
+					padding-top: math.div(system.$default-gap, 2);
+				}
+			}
+			.title {
+				display: block;
+				font-size: 2rem;
+
+				@include desktop {
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+
+	.priceSection {
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: system.$default-gap;
+		flex-wrap: wrap;
+		font-size: 1rem;
+		position: relative;
+
+		@include desktop {
+			flex-direction: row;
+			align-items: center;
+			gap: (system.$default-gap * 2);
+		}
+
+		.off {
+			display: block;
+		}
+		.price {
+			display: flex;
+			flex-direction: column;
+			font-size: 1.2rem;
+			font-weight: 500;
+			// line-height: 2.8rem;
+
+			@include desktop {
+				font-size: 1rem;
+			}
+
+			.old {
+				text-decoration: line-through;
+				color: hslac($clr-grey);
+			}
+
+			.current {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: math.div(system.$default-gap, 3);
+
+				.number {
+					font-size: 2rem;
+					@include desktop {
+						font-size: 2.4rem;
+					}
+				}
+
+				.currency {
+					color: hslac($clr-red);
+				}
+			}
+		}
+	}
+}

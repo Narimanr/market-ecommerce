@@ -7,6 +7,7 @@ import { iCard } from '@/element/Card/Card';
 
 // Components
 import CartItem from '@/element/CartItem/CartItem';
+import InvoiceSummary from '@/element/InvoiceSummary/InvoiceSummary';
 
 
 interface PageProps {
@@ -44,45 +45,12 @@ export default function Cart(props: PageProps) {
                     </div>
 
                     <div className={styles.summary}>
-                        <div className={styles.rows}>
-                            <div className={styles.subtotal}>
-                                <span className={styles.text}>مجموع</span>
-                                <div className={styles.number}>
-                                    <span >۱،۳۰۸،۰۰۰</span>
-                                    <span className={styles.currency}>
-                                        تومان
-                                    </span>
-                                </div>
-                            </div>
-                            <div className={styles.discount}>
-                                <span className={styles.text}>تخفیف</span>
-                                <div className={styles.number}>
-                                    <span >۳۵،۰۰۰</span>
-                                    <span className={styles.currency}>
-                                        تومان
-                                    </span>
-                                </div>
-                            </div>
-                            <div className={styles.shipping}>
-                                <span className={styles.text}>هزینه ارسال</span>
-                                <div className={styles.number}>
-                                    <span >۵۰،۰۰۰</span>
-                                    <span className={styles.currency}>
-                                        تومان
-                                    </span>
-                                </div>
-                            </div>
-                            <div className={styles.total}>
-                                <span className={styles.text}>قابل پرداخت</span>
-                                    <div className={styles.number}>
-                                        <span >۱،۳۵۸،۰۰۰</span>
-                                        <span className={styles.currency}>
-                                            تومان
-                                        </span>
-                                    </div>
-                            </div>
-                        </div>
-
+                        <InvoiceSummary
+                            subtotal={'۱،۳۰۸،۰۰۰'}
+                            total={'۱،۳۵۸،۰۰۰'}
+                            discount={'۳۵،۰۰۰'}
+                            shipping={'۵۰،۰۰۰'}
+                        />
 
                         <Link href="/checkout">
                             <button className={styles.proceedButton}>

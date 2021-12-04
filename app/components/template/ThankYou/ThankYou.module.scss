@@ -1,0 +1,206 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.ThankYouGrid {
+	direction: rtl;
+	display: grid;
+	// grid-auto-rows: minmax(1fr, max-content);
+	grid-auto-rows: auto;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-areas:
+		"notice"
+		"billing";
+
+	background-color: hslac($background-grey);
+
+	// all items be 100%;
+	& > * {
+		// width: 100vw;
+		margin: (system.$default-gap * 2) system.$mobile-padding;
+
+		@include desktop {
+			margin: (system.$default-gap * 2) system.$desktop-padding;
+		}
+	}
+
+	.wrapper {
+		grid-area: notice;
+		background-color: hslac($background-white);
+		border-radius: system.$default-radius;
+		padding: system.$default-gap;
+		box-shadow: $box-shadow;
+		display: flex;
+		flex-direction: column;
+		gap: system.$default-gap;
+
+		@include desktop {
+			padding: system.$default-gap * 2;
+		}
+
+		.text {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+
+			& > * {
+				margin-bottom: system.$default-gap;
+			}
+
+			.message {
+				font-size: 3rem;
+				text-align: center;
+				margin-bottom: system.$default-gap * 1.5;
+			}
+
+			.orderConfirm {
+				font-size: 2rem;
+
+				.orderNumber {
+					padding: 0 math.div(system.$default-gap, 3);
+					font-weight: 500;
+				}
+			}
+
+			.checkMail {
+				font-size: 1.5rem;
+
+				.email {
+					font-weight: 500;
+					padding: 0 math.div(system.$default-gap, 2);
+				}
+			}
+
+			.orderTime {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: system.$default-gap;
+
+				.dateTime {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					gap: 1rem;
+					font-size: 1.4rem;
+					font-weight: 500;
+
+					.label {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						gap: 0.5rem;
+
+						i {
+							color: hslac($clr-blue);
+							font-size: 2rem;
+						}
+					}
+
+					.date,
+					.time {
+						font-weight: 300;
+					}
+				}
+			}
+
+			.print {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 0.5rem;
+				font-size: 1.4rem;
+				font-weight: 500;
+
+				i {
+					color: hslac($clr-blue);
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+
+	.chart {
+		grid-area: billing;
+		display: flex;
+		flex-direction: column;
+		gap: system.$default-gap;
+
+		@include desktop {
+			flex-direction: row;
+		}
+
+		& > * {
+			padding: math.div(system.$default-gap, 2) system.$default-gap;
+		}
+
+		.card {
+			flex: 1 1 33%;
+			background-color: hsl(0, 0%, 100%);
+			border-radius: system.$default-radius;
+			box-shadow: $box-shadow;
+			display: flex;
+			flex-direction: column;
+			font-size: 1.6rem;
+			min-height: 25rem;
+
+			i {
+				font-size: 3.5rem;
+				color: hslac($clr-blue);
+				margin-bottom: math.div(system.$default-gap, 2);
+			}
+
+			&Title {
+				font-size: 2rem;
+				font-weight: 500;
+				margin-bottom: system.$default-gap;
+			}
+
+			&Recipient {
+				font-size: 1.6rem;
+				font-weight: 500;
+			}
+
+			&Text {
+				font-weight: 300;
+				display: flex;
+				flex-direction: column;
+			}
+		}
+	}
+
+	.items {
+		display: flex;
+		flex-direction: column;
+		gap: system.$default-gap;
+
+		@include desktop {
+			flex-direction: row;
+		}
+		.header {
+			font-size: 2.8rem;
+			margin: system.$default-gap 0 math.div(system.$default-gap, 2);
+			padding-bottom: math.div(system.$default-gap, 2);
+			border-bottom: 1px solid hslac($clr-grey, 30%);
+			@include desktop {
+				padding-bottom: system.$default-gap;
+			}
+		}
+
+		.list {
+			flex-basis: 66.66%;
+		}
+
+		.checkout {
+			flex-basis: 33.33%;
+			background-color: hsl(0, 0%, 100%);
+			box-shadow: $box-shadow;
+			border-radius: system.$default-radius;
+			padding: system.$default-gap;
+			height: max-content;
+			color: hslac(#000);
+			font-size: 1.6rem;
+		}
+	}
+}
