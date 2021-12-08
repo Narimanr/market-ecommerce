@@ -16,6 +16,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/components/*": ["app/components/*"],
+			"@/interfaces/*": ["app/interfaces/*"],
+			"@/enums/*": ["app/enums/*"],
 			"@/style/*": ["app/styles/*"],
 			"@/public/*": ["public/*"],
 			"@/element/*": ["app/components/element/*"],
@@ -29,7 +31,7 @@
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
-		"app/components/layout/Layout/Layout.js"
+		"app/components/layout/Main/Layout.js"
 	],
 	"exclude": ["node_modules"]
 }

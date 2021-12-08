@@ -1,10 +1,16 @@
 import gridStyle from './ProductGrid.module.scss';
 
-import Card, {iCard, Banner} from '@/element/Card/Card';
+// Import Intercace
+import {iProduct} from '@/interfaces/Interfaces';
+
+// Import enum
+import { Banner } from '@/enums/Enums';
+
+import Card from '@/element/Card/ProductCard/ProductCard';
 
 interface Props {
     title?: string,
-    items: iCard[]
+    items: iProduct[]
 }
 
 export default function ProductGrid(props: Props) {

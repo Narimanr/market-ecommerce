@@ -1,13 +1,14 @@
 import styles from './Category.module.scss';
 
-// Interfaces
-import { iCard } from '@/element/Card/Card';
-import ProductGrid from '@/layout/ProductGrid/ProductGrid';
+// Import Interface
+import { iProduct} from '@/interfaces/Interfaces';
+
+import ProductGrid from '@/components/layout/Grid/ProductGrid/ProductGrid';
 
 
 interface PageProps {
     title: string;
-    items: iCard[];
+    items: iProduct[];
 };
 
 

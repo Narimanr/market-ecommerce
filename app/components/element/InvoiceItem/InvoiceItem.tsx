@@ -3,19 +3,12 @@ import Image from 'next/image';
 import cardStyle from './InvoiceItem.module.scss';
 
 
-export interface iCard {
-    id: string, 
-    category: string,
-    title: string,
-    price: string,
-    oldPrice?: string,
-    image: string,
-    banner?: string
-};
+// Import Interface
+import {iProduct} from '@/interfaces/Interfaces';
 
 
 
-export default function InvoiceItem(props: iCard) {
+export default function InvoiceItem(props: iProduct) {
 
 
   return (

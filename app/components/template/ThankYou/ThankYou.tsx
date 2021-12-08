@@ -1,9 +1,7 @@
-import Link from 'next/link';
-
 import styles from './ThankYou.module.scss';
 
-// Interfaces
-import { iCard } from '@/element/Card/Card';
+// Import Interface
+import {iProduct} from '@/interfaces/Interfaces';
 
 // Components
 import InvoiceItem from '@/element/InvoiceItem/InvoiceItem';
@@ -22,7 +20,7 @@ interface PageProps {
     shipping: string;
     discount: string;
     total: string;
-    items: iCard[];
+    items: iProduct[];
 };
 
 
@@ -127,6 +125,7 @@ export default function ThankYou(props: PageProps) {
                                     title={item.title}
                                     id={item.id}
                                     category={item.category}
+                                    catSlug={item.catSlug}
                                     price={item.price}
                                     oldPrice={item.oldPrice}
                                     image={item.image}

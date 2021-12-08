@@ -1,9 +1,9 @@
 import styles from './Product.module.scss';
 
-// Interfaces
-import { iCard } from '@/element/Card/Card';
+// Import Interface
+import {iProduct} from '@/interfaces/Interfaces';
 import ProductInfo from '@/layout/ProductInfo/ProductInfo';
-import FrequnetGrid from '@/layout/FrequentGrid/FrequentGrid';
+import FrequnetGrid from '@/components/layout/Grid/FrequentGrid/FrequentGrid';
 import ProductCarousel from '@/layout/ProductCarousel/ProductCarousel';
 
 
@@ -16,8 +16,8 @@ interface PageProps {
     category: string;
     catSlug: string;
     tags: string;
-    frequentItems?: iCard[];
-    similarItems?: iCard[];
+    frequentItems?: iProduct[];
+    similarItems?: iProduct[];
 };
 
 

@@ -2,29 +2,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 
-import cardStyle from './Card.module.scss';
+import cardStyle from './ProductCard.module.scss';
 
+// Import Interface
+import {iProduct} from '@/interfaces/Interfaces';
 
-export interface iCard {
-    id: string, 
-    category: string,
-    catSlug: string,
-    title: string,
-    price: string,
-    oldPrice?: string,
-    image: string,
-    banner?: string
-};
-
-export const enum Banner  {
-    Off = 'off',
-    Special = 'special',
-    Popular = 'popular'
-};
+// Import Enum
+import { Banner } from '@/enums/Enums';
 
 
 
-export default function Card(props: iCard) {
+export default function ProductCard(props: iProduct) {
   var bannerElement;
       switch (props.banner) {
         case Banner.Off:
@@ -64,7 +52,7 @@ export default function Card(props: iCard) {
             </div>
             <div className={cardStyle.cardBody}>
               <div className={cardStyle.imageBox}>
-              <Image src={props.image} alt="product image" layout="fill" objectFit="contain" />
+              <Image src={props.image} alt="product image" layout="fill" objectFit="contain" priority={true} />
               </div>
             <div className={cardStyle.text}>
               <span className={cardStyle.category}>

@@ -1,10 +1,12 @@
-import { iCard } from '@/element/Card/Card';
-import { iCategory } from '@/element/CategoryCard/CategoryCard';
-import { iSpecialCard, Colors } from '@/element/SpecialCard/SpecialCard';
-import { Slide } from '@/components/element/Carousel/Carousel'; 
+// Import Interface
+import {iProduct, iCategory, iSlide, iSpecial} from '@/interfaces/Interfaces';
 
 
-export const DUMMY_SLIDES: Slide[] = [
+// Import enums
+import {Color} from '@/enums/Enums';
+
+
+export const DUMMY_SLIDES: iSlide[] = [
     {
       id: '1',
       url: "/images/hero/visual-stories-micheile-TqQoPFLhpjA-unsplash.jpg"
@@ -86,7 +88,7 @@ export const DUMMY_CATEGORIES: iCategory[] = [
       },
   ];
 
-export const DUMMY_ITEMS: iCard[] = [
+export const DUMMY_ITEMS: iProduct[] = [
     {
       id: '1',
       title: 'بسته ۶تایی دونات',
@@ -124,45 +126,45 @@ export const DUMMY_ITEMS: iCard[] = [
     }
   ];
 
-export const DUMMY_SPECIAL_ITEMS: iSpecialCard[] = [
+export const DUMMY_SPECIAL_ITEMS: iSpecial[] = [
     {
       title: 'سبزی تازه',
       subtitle: 'محصولات جدید',
       image: '/images/products/vegetables.png',
-      color: Colors.Green
+      color: Color.Green
     },
     {
       title: 'نان و شیرینی',
       subtitle: 'محصولات تازه',
       image: '/images/products/bread.png',
-      color: Colors.Orange
+      color: Color.Orange
     },
     {
       title: 'قهوه استارباکس',
       subtitle: 'پرفروش ترین',
       image: '/images/products/coffee.png',
-      color: Colors.Grey
+      color: Color.Grey
     },
     {
       title: 'کیت کت روزانه',
       subtitle: 'پرفروش ترین',
       image: '/images/products/kitkat.png',
-      color: Colors.DarkBlue
+      color: Color.DarkBlue
     },
   ];
 
-export const DUMMY_SPECIAL_ITEMS_2: iSpecialCard[] = [
+export const DUMMY_SPECIAL_ITEMS_2: iSpecial[] = [
      {
       title: 'جعبه دوریتوس ۶ تایی',
       subtitle: 'تند و آتشین',
       image: '/images/products/doritos-bag.png',
-      color: Colors.Grey
+      color: Color.Grey
     },
      {
       title: 'پک سریال',
       subtitle: 'صبحانه کامل',
       image: '/images/products/cereal-pack.png',
-      color: Colors.Orange
+      color: Color.Orange
      },
       {
       title: 'سالامی',

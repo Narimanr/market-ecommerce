@@ -1,42 +1,34 @@
 import Image from 'next/image'
 
+// Import Interface
+import {iSpecial} from '@/interfaces/Interfaces';
+
+// import Enum
+import { Color } from '@/enums/Enums';
+
 import cardStyle from './SpecialCard.module.scss';
 
-export const enum Colors  {
-    Orange = 'Orange',
-    Green = 'Green',
-    Purple = 'Pirple',
-    Grey = 'Grey',
-    Blue = 'Blue',
-    DarkBlue = 'DarkBlue'
-};
 
-export interface iSpecialCard {
-    title: string,
-    subtitle: string,
-    image: string,
-    color?: string
-};
 
-export default function SpecialCard(props: iSpecialCard) {
+export default function SpecialCard(props: iSpecial) {
     var cardColor = cardStyle.special;
     switch (props.color) {
-        case Colors.Grey:
+        case Color.Grey:
             cardColor = cardStyle.specialGrey;
             break;
-        case Colors.Green:
+        case Color.Green:
             cardColor = cardStyle.specialGreen;
             break;
-        case Colors.Purple:
+        case Color.Purple:
             cardColor = cardStyle.specialPurple;
             break;
-         case Colors.Orange:
+         case Color.Orange:
             cardColor = cardStyle.specialOrange;
             break;
-        case Colors.DarkBlue:
+        case Color.DarkBlue:
             cardColor = cardStyle.specialDarkBlue;
             break;
-        case Colors.Blue:
+        case Color.Blue:
             cardColor = cardStyle.special;
             break;
         default:
@@ -51,7 +43,7 @@ export default function SpecialCard(props: iSpecialCard) {
             <div className={cardStyle.specialBody}>
                 <span className={cardStyle.title}>{props.title}</span>
                 <div className={cardStyle.imageBox}>
-                    <Image src={props.image} alt="product image" layout="fill" objectFit="contain"  objectPosition="left" />
+                    <Image src={props.image} alt="product image" layout="fill" objectFit="contain"  objectPosition="left" priority={true} />
                 </div>
             </div>
         </div>

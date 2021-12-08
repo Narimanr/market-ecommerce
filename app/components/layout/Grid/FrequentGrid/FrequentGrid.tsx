@@ -1,10 +1,14 @@
 import gridStyle from './FrequentGrid.module.scss';
 
-import FrequentCard, {iCard} from '@/element/FrequentCard/FrequentCard';
+// Import Interface
+import {iProduct} from '@/interfaces/Interfaces';
+
+// Import Component
+import FrequentCard from '@/components/element/Card/FrequentCard/FrequentCard';
 
 interface Props {
     title: string,
-    items: iCard[]
+    items: iProduct[]
 }
 
 export default function FrequentGrid(props: Props) {

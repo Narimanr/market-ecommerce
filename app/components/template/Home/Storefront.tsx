@@ -1,27 +1,24 @@
 import styles from './Storefront.module.scss';
 
 // Interfaces
-import { Slide } from '@/components/element/Carousel/Carousel';
-import { iCard } from '@/element/Card/Card';
-import { iCategory } from '@/element/CategoryCard/CategoryCard';
-import { iSpecialCard} from '@/element/SpecialCard/SpecialCard';
+import {iSlide, iProduct, iCategory, iSpecial} from '@/interfaces/Interfaces';
 
 // Layouts
 import Hero from '@/layout/Hero/Hero';
-import CategoryGrid from '@/layout/CategoryGrid/CategoryGrid';
-import ProductRow from '@/layout/ProductRow/ProductRow';
-import SpecialRow from '@/layout/SpecialRow/SpecialRow';
-import ProductGrid from '@/layout/ProductGrid/ProductGrid';
+import CategoryGrid from '@/layout/Grid/CategoryGrid/CategoryGrid';
+import ProductRow from '@/layout/Row/ProductRow/ProductRow';
+import SpecialRow from '@/layout/Row/SpecialRow/SpecialRow';
+import ProductGrid from '@/layout/Grid/ProductGrid/ProductGrid';
 import ProductCarousel from '@/layout/ProductCarousel/ProductCarousel';
 
 
 
 interface PageProps {
-  slides: Slide[],
+  slides: iSlide[],
   categories: iCategory[],
-  items: iCard[],
-  specialItems: iSpecialCard[],
-  specialItemsAgain: iSpecialCard[]
+  items: iProduct[],
+  specialItems: iSpecial[],
+  specialItemsAgain: iSpecial[]
 };
 
 export default function Storefront(props: PageProps) {

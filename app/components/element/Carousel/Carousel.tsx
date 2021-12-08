@@ -15,14 +15,11 @@ import SwiperCore, {Pagination,Navigation} from 'swiper';
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
 
-
-export interface Slide {
-        id: string,
-        url: string
-}
+// Import Interface
+import {iSlide} from '@/interfaces/Interfaces';
 
 interface PageProps {
-    items: Slide[]
+    items: iSlide[]
 }
 
 

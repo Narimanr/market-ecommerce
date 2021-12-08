@@ -1,9 +1,12 @@
 import rowStyle from './SpecialRow.module.scss';
 
-import SpecialCard, { iSpecialCard } from '@/element/SpecialCard/SpecialCard';
+// Import Interface
+import { iSpecial } from '@/interfaces/Interfaces';
+
+import SpecialCard from '@/components/element/Card/SpecialCard/SpecialCard';
 
 interface SpecialProps {
-    items: iSpecialCard[]
+    items: iSpecial[]
 };
 
 

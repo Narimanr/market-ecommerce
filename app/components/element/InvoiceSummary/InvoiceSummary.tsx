@@ -1,15 +1,9 @@
+// Import Interface
+import {iInvoiceSummary} from '@/interfaces/Interfaces';
+
 import cardStyle from './InvoiceSummary.module.scss';
 
-
-
-export interface iSummaryCard {
-    subtotal: string,
-    total: string,
-    discount?: string,
-    shipping: string,
-};
-
-export default function InvoiceSummary(props: iSummaryCard) {
+export default function InvoiceSummary(props: iInvoiceSummary) {
     return (
             <div className={cardStyle.rows}>
                 <div className={cardStyle.subtotal}>

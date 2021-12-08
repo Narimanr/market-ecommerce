@@ -4,21 +4,10 @@ import Image from 'next/image';
 
 import cardStyle from './FrequentCard.module.scss';
 
-
-export interface iCard {
-    id: string, 
-    category: string,
-    catSlug: string,
-    title: string,
-    price: string,
-    oldPrice?: string,
-    image: string,
-    banner?: string
-};
+import {iProduct} from '@/interfaces/Interfaces';
 
 
-
-export default function FrequentCard(props: iCard) {
+export default function FrequentCard(props: iProduct) {
   return (
     <Link
     href={`/${encodeURIComponent(props.catSlug)}/${encodeURIComponent(props.id)}`}
@@ -29,7 +18,7 @@ export default function FrequentCard(props: iCard) {
           </div>
             <div className={cardStyle.cardBody}>
               <div className={cardStyle.imageBox}>
-              <Image src={props.image} alt="product image" layout="fill" objectFit="contain" />
+              <Image src={props.image} alt="product image" layout="fill" objectFit="contain" priority={true} />
               </div>
             <div className={cardStyle.text}>
               <span className={cardStyle.category}>

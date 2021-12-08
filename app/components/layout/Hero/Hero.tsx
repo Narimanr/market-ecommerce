@@ -1,9 +1,10 @@
 import styles from './Hero.module.scss';
 
-import Carousel, { Slide } from '@/element/Carousel/Carousel';
+import { iSlide } from '@/interfaces/Interfaces';
+import Carousel from '@/element/Carousel/Carousel';
 
 interface Props {
-    items: Slide[]
+    items: iSlide[]
 }
 
 export default function Hero(props: Props) {

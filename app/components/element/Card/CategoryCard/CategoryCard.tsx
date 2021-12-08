@@ -3,12 +3,8 @@ import Image from 'next/image'
 
 import cardStyle from './CategoryCard.module.scss';
 
-export interface iCategory {
-    title: string,
-    slug: string,
-    count: string,
-    image: string,
-};
+// Import Interface
+import {iCategory} from '@/interfaces/Interfaces';
 
 export default function CategoryCard(props: iCategory) {
 
@@ -24,7 +20,7 @@ export default function CategoryCard(props: iCategory) {
                             محصول
                         </span>
                         <div className={cardStyle.imageBox}>
-                            <Image src={props.image} alt="product image" layout="fill" objectFit="contain"  objectPosition="left" />
+                            <Image src={props.image} alt="product image" layout="fill" objectFit="contain" objectPosition="left" priority={true} />
                         </div>
                     </div>
                     <div className={cardStyle.categoryFooter}>

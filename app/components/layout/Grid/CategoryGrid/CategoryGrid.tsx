@@ -1,6 +1,9 @@
 import gridStyle from './CategoryGrid.module.scss';
 
-import CategoryCard, {iCategory} from '@/element/CategoryCard/CategoryCard';
+// Import Interface
+import {iCategory} from '@/interfaces/Interfaces';
+
+import CategoryCard from '@/components/element/Card/CategoryCard/CategoryCard';
 
 interface Props {
     items: iCategory[]

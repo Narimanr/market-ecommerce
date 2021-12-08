@@ -3,15 +3,15 @@ import Link from 'next/link';
 import styles from './Cart.module.scss';
 
 // Interfaces
-import { iCard } from '@/element/Card/Card';
+import  {iProduct}  from '@/interfaces/Interfaces';
 
 // Components
-import CartItem from '@/element/CartItem/CartItem';
+import CartItem from '@/element/CartItemCard/CartItemCard';
 import InvoiceSummary from '@/element/InvoiceSummary/InvoiceSummary';
 
 
 interface PageProps {
-    items: iCard[];
+    items: iProduct[];
 };
 
 

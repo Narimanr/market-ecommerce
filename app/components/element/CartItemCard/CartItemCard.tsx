@@ -1,23 +1,13 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 
-import cardStyle from './CartItem.module.scss';
+import cardStyle from './CartItemCard.module.scss';
+
+// Import Interface
+import {iProduct} from '@/interfaces/Interfaces';
 
 
-export interface iCard {
-    id: string, 
-    category: string,
-    catSlug: string,
-    title: string,
-    price: string,
-    oldPrice?: string,
-    image: string,
-    banner?: string
-};
-
-
-export default function CartItem(props: iCard) {
+export default function CartItem(props: iProduct) {
 const [qty, setqty] = useState(1);
 
     const increment = () => {

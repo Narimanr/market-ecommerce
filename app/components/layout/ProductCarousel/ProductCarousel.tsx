@@ -10,20 +10,21 @@ import rowStyle from './ProductCarousel.module.scss';
 // import Swiper core and required modules
 import SwiperCore, {Navigation} from 'swiper';
 
-
 // install Swiper modules
 SwiperCore.use([Navigation]);
 
 
-export interface Slide {
-    images: string[]
-}
 
-import Card, {iCard, Banner} from '@/element/Card/Card';
+// Import Interface
+import {iProduct} from '@/interfaces/Interfaces';
+import Card from '@/element/Card/ProductCard/ProductCard';
+
+// Import enums
+import { Banner } from '@/enums/Enums';
 
 interface Props {
     title: string,
-    items: iCard[]
+    items: iProduct[]
 }
 
 export default function ProductCarousel(props: Props) {
