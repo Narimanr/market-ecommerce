@@ -3,7 +3,7 @@
 *,
 html,
 p {
-	font-family: "Open Sans", iransansx, sans-serif;
+	font-family: iransansx, "Open Sans", sans-serif;
 	-moz-font-feature-settings: "ss02";
 	-webkit-font-feature-settings: "ss02";
 	font-feature-settings: "ss02";
@@ -11,7 +11,7 @@ p {
 
 @supports (font-variation-settings: normal) {
 	p {
-		font-family: "Open Sans", "iransansxv", sans-serif;
+		font-family: "iransansxv", "Open Sans", sans-serif;
 		-moz-font-feature-settings: "ss02";
 		-webkit-font-feature-settings: "ss02";
 		font-feature-settings: "ss02";
