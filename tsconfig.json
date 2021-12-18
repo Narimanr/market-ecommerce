@@ -23,6 +23,7 @@
 			"@/element/*": ["app/components/element/*"],
 			"@/layout/*": ["app/components/layout/*"],
 			"@/template/*": ["app/components/template/*"],
+			"@/redux/*": ["app/redux/*"],
 			"@/DB/*": ["app/database/*"]
 		},
 		"incremental": true
@@ -31,7 +32,8 @@
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
-		"app/components/layout/Main/Layout.js"
+		"app/components/layout/Main/Layout.js",
+		"pages/api/auth/[...nextauth].ts"
 	],
 	"exclude": ["node_modules"]
 }

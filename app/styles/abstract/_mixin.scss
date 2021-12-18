@@ -19,25 +19,31 @@ $desktop: 75rem;
 $big-desktop: 112.5rem;
 
 @mixin tab-port {
-  @media (min-width: #{$tab-port}) {
-    @content;
-  }
+	@media (min-width: #{$tab-port}) {
+		@content;
+	}
 }
 
 @mixin tab-land {
-  @media (min-width: #{$tab-land}) {
-    @content;
-  }
+	@media (min-width: #{$tab-land}) {
+		@content;
+	}
 }
 
 @mixin desktop {
-  @media (min-width: #{$desktop}) {
-    @content;
-  }
+	@media (min-width: #{$desktop}) {
+		@content;
+	}
 }
 
 @mixin big-desktop {
-  @media (min-width: #{$big-desktop}) {
-    @content;
-  }
+	@media (min-width: #{$big-desktop}) {
+		@content;
+	}
+}
+
+@mixin print {
+	@media print {
+		@content;
+	}
 }

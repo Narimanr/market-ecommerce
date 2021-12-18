@@ -52,7 +52,7 @@ export default function Cart(props: PageProps) {
                             shipping={'۵۰،۰۰۰'}
                         />
 
-                        <Link href="/checkout">
+                        <Link href="/order/shipping">
                             <button className={styles.proceedButton}>
                                 <div className={styles.price}>
                                     <span >۱،۳۵۸،۰۰۰</span>

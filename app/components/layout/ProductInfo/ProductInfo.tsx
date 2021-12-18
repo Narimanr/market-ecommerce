@@ -2,26 +2,30 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { addItem } from '@/redux/features/Cart/CartSlice';
+
+
 import styles from './ProductInfo.module.scss';
 
 interface Props {
-    title: string,
-    image: string,
-    price: string,
-    oldPrice?: string,
-    tags: string,
+    id: string;
+    title: string;
+    image: string;
+    gallery?: string[];
+    price: string;
+    oldPrice?: string;
+    tags: string;
     category: string;
     catSlug: string;
-    description: string
+    description: string;
 }
 
 export default function ProductInfo(props: Props) {
     const [qty, setqty] = useState(1);
-
     const increment = () => {
         setqty(qty + 1);
     }
-
     const decrement = () => {
         if (qty == 1) {
             setqty(1);
@@ -29,13 +33,28 @@ export default function ProductInfo(props: Props) {
             setqty(qty - 1);
         }
     }
+    const dispatch = useAppDispatch();
+
+    const handleClick = () => {
+        const payload = {
+            id: props.id,
+            quantity: qty
+        }
+        dispatch(addItem(payload));
+    }
+
+    
 
     return (
         <section className={styles.infoGrid}>
             
             <div className={styles.image}>
                 <div className={styles.imageBox}>
-                    <Image src={props.image} alt="product image" layout="fill" objectFit="contain" />
+                    {props.gallery ? (
+                        <div>image gallery</div>
+                    ) : (
+                            <Image src={props.image} alt="product image" layout="fill" objectFit="contain" />
+                    )}
                 </div>
             </div>
 
@@ -81,7 +100,7 @@ export default function ProductInfo(props: Props) {
                         </div>
                     </div>
                     <Link href="/cart">
-                        <button className={styles.cartButton}>
+                        <button className={styles.cartButton} onClick={handleClick}>
                             <i className='bx bxs-shopping-bag-alt bx-md'></i>
                             <span>اضافه کردن به سبد خرید</span>
                         </button>

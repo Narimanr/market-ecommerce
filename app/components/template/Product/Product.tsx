@@ -4,12 +4,14 @@ import styles from './Product.module.scss';
 import {iProduct} from '@/interfaces/Interfaces';
 import ProductInfo from '@/layout/ProductInfo/ProductInfo';
 import FrequnetGrid from '@/components/layout/Grid/FrequentGrid/FrequentGrid';
-import ProductCarousel from '@/layout/ProductCarousel/ProductCarousel';
+import ProductCarousel from '@/components/layout/Carousel/ProductCarousel/ProductCarousel';
 
 
 interface PageProps {
     title: string;
+    id: string;
     image: string;
+    gallery?: string[];
     price: string;
     oldPrice?: string;
     description: string;
@@ -26,6 +28,7 @@ export default function Product(props: PageProps) {
         <div className={styles.ProductGrid}>
             <div className={styles.info}>
                 <ProductInfo
+                    id={props.id}
                     title={props.title}
                     image={props.image}
                     price={props.price}

@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import carouselStyle from './Carousel.module.scss';
+import carouselStyle from './GalleryCarousel.module.scss';
 
 // import Swiper core and required modules
 import SwiperCore, {Pagination,Navigation} from 'swiper';
@@ -23,7 +23,7 @@ interface PageProps {
 }
 
 
-export default function Carousel(props: PageProps) {
+export default function GalleryCarousel(props: PageProps) {
 
     return (
         <div className={carouselStyle.imageSlider}>

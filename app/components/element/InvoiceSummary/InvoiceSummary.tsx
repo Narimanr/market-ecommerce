@@ -1,5 +1,5 @@
 // Import Interface
-import {iInvoiceSummary} from '@/interfaces/Interfaces';
+import { iInvoiceSummary } from '@/interfaces/Interfaces';
 
 import cardStyle from './InvoiceSummary.module.scss';
 
@@ -41,7 +41,7 @@ export default function InvoiceSummary(props: iInvoiceSummary) {
                                 تومان
                             </span>
                         </div>
-                </div>
+            </div>
             </div>
     );
 };

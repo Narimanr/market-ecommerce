@@ -63,7 +63,7 @@ export default function ThankYou(props: PageProps) {
                                 </span>
                             </div>
 
-                            <div className={styles.print}>
+                            <div className={styles.print} onClick={() => window.print()}>
                                 <i className="bx bxs-printer"></i>
                                 <span>پرینت</span>
                             </div>

@@ -9,7 +9,7 @@ import CategoryGrid from '@/layout/Grid/CategoryGrid/CategoryGrid';
 import ProductRow from '@/layout/Row/ProductRow/ProductRow';
 import SpecialRow from '@/layout/Row/SpecialRow/SpecialRow';
 import ProductGrid from '@/layout/Grid/ProductGrid/ProductGrid';
-import ProductCarousel from '@/layout/ProductCarousel/ProductCarousel';
+import ProductCarousel from '@/layout/Carousel/ProductCarousel/ProductCarousel';
 
 
 

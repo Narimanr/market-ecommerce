@@ -1,7 +1,7 @@
 import styles from './Hero.module.scss';
 
 import { iSlide } from '@/interfaces/Interfaces';
-import Carousel from '@/element/Carousel/Carousel';
+import Carousel from '@/element/Carousel/HeroCarousel/HeroCarousel';
 
 interface Props {
     items: iSlide[]

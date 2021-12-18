@@ -9,7 +9,7 @@ export default function Footer() {
         <footer className={styles.footer}>
             <div className={styles.footerGrid}>
                 <div className={styles.logo}>
-                    <Image src="/images/electro-logo.png" alt="electro Logo" width={200} height={150} objectFit="contain" />
+                    <Image src="/images/logo/vorna-mart-logo-white.png" alt="لوگو ورنا مارت" width={200} height={150} objectFit="contain" />
                 </div>
                 <div className={styles.links}>
                     <ul>
@@ -39,7 +39,7 @@ export default function Footer() {
             </div>
         </footer>
         <div className={styles.copyright}>
-                <p>تمامی حقوق مادی و معنوی این وبسایت برای الکترو می‌باشد - ۱۴۰۰</p>
+                <p>تمامی حقوق مادی و معنوی این وبسایت برای ورنا مارت محفوظ می‌باشد - ۱۴۰۰</p>
             </div>
         </>
     );

@@ -1,27 +1,14 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './Login.module.scss';
 
-import { useFormik } from 'formik';
-
-
-
-
-interface PageProps {
-
-};
-
+// import TwoFactor from '@/element/Form/Login/TwoFactor/TwoFactor';
+import Username, {FormData} from '@/element/Form/Login/Username/Username';
 
 export default function Login() {
-const formik = useFormik({
-    initialValues: {
-      username: '',
-      password: ''
-    },
-    onSubmit: values => {
-    //   login(values);
-    },
-      });
-    
+    const formData = (data: FormData) => {
+        console.log(data);
+    }
     return (
         <div className={styles.AuthGrid}>
             <div className={styles.wrapper}>
@@ -32,61 +19,21 @@ const formik = useFormik({
                             <span className={styles.welcome}>خوش بازگشتید، دلتنگ شما بودیم!</span>
                         </div>
 
-                        <div className={styles.form}>
-                            <form onSubmit={formik.handleSubmit} className={styles.formContainer}>
-                                <div className={styles.formField}>
-                                    <label
-                                    className={styles.formLabel}
-                                    htmlFor="username"
-                                    >
-                                    نام کاربری
-                                    </label>
-                                    <input
-                                    type="text"
-                                    id="username"
-                                    onChange={formik.handleChange}
-                                    value={formik.values.username}
-                                    className={styles.formInput}
-                                    placeholder="نام کاربری خود را وارد کنید"
-                                    />
-                                </div>
+                        <div className={styles.formWrapper}>
+                            <Username pullData={formData} />
 
-                                <div className={styles.formField}>
-                                    <label
-                                    className={styles.formLabel}
-                                    htmlFor="password"
-                                    >
-                                    رمز عبور
-                                    </label>
-                                    <input
-                                    type="password"
-                                    id="password"
-                                    onChange={formik.handleChange}
-                                    value={formik.values.password}
-                                    className={styles.formInput}
-                                    placeholder="رمز عبور"
-                                    />
-                                </div>
+                            <div className={styles.switch}>
+                                <span>عضو نیستید؟</span>
+                                <Link href="/auth/signup">
+                                    <a href="/auth/signup">
+                                        ثبت نام کنید
+                                    </a>
+                                </Link>
+                            </div>
+                        </div>
 
-                                <div className={styles.formForgot}>
-                                    <span>فراموش کردم</span>
-                                </div>
-
-                               
-                                <div className={styles.formSubmit}>
-                                    <button
-                                        className={styles.formButton}
-                                        type="submit"
-                                        >
-                                            <i className='bx bx-log-in-circle bx-md bx-flip-horizontal'></i>
-                                        <span>ورود به حساب کاربری</span>
-                                    </button>
-                                </div>
-                            </form>
-
-                            <div className={styles.other}>
-                                <span className={styles.overlay}>یا از طریق</span>
-
+                          <div className={styles.other}>
+                                <span className={styles.overlay}>و یا از طریق</span>
                                 <div className={styles.OAuth}>
                                     <div className={styles.logoButton}>
                                         <div className={styles.icon}>
@@ -105,7 +52,7 @@ const formik = useFormik({
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        
                     </div>
                   
                     <div className={styles.image}>

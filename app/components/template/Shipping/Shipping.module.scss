@@ -1,0 +1,164 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.ShippingGrid {
+	direction: rtl;
+	display: grid;
+	// grid-auto-rows: minmax(1fr, max-content);
+	grid-auto-rows: auto;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-areas: "notice";
+
+	background-color: hslac($background-grey);
+
+	// all items be 100%;
+	& > * {
+		// width: 100vw;
+		margin: (system.$default-gap * 2) system.$mobile-padding;
+
+		@include desktop {
+			margin: (system.$default-gap * 2) system.$desktop-padding;
+		}
+	}
+
+	.wrapper {
+		grid-area: notice;
+		background-color: hslac($background-white);
+		border-radius: system.$default-radius;
+		padding: system.$default-gap;
+		box-shadow: $box-shadow;
+		display: flex;
+		flex-direction: column;
+		gap: system.$default-gap;
+
+		@include desktop {
+			padding: system.$default-gap * 2;
+		}
+
+		.text {
+			display: flex;
+			flex-direction: column;
+			font-size: 1.4rem;
+
+			& > * {
+				margin-bottom: system.$default-gap;
+			}
+
+			.header {
+				font-size: 3rem;
+				text-align: right;
+				margin-bottom: system.$default-gap * 1.5;
+			}
+		}
+
+		.shippingDetails {
+			display: flex;
+			flex-direction: column;
+			gap: system.$default-gap;
+
+			@include desktop {
+				flex-direction: row;
+			}
+			.sections {
+				flex-basis: 66.66%;
+				display: flex;
+				flex-direction: column;
+				gap: system.$default-gap;
+
+				& > * {
+					padding: math.div(system.$default-gap, 2)
+						system.$default-gap;
+				}
+
+				.card {
+					background-color: hsl(0, 0%, 100%);
+					border-radius: system.$default-radius;
+					box-shadow: $box-shadow;
+					display: flex;
+					flex-direction: column;
+					font-size: 1.6rem;
+
+					i {
+						font-size: 3.5rem;
+						color: hslac($clr-blue);
+						margin-bottom: math.div(system.$default-gap, 2);
+					}
+
+					&Title {
+						font-size: 2rem;
+						font-weight: 500;
+						margin-bottom: system.$default-gap;
+					}
+
+					&Info {
+						font-size: 1.4rem;
+						margin-bottom: 2rem;
+					}
+
+					&Select {
+						font-size: 1.6rem;
+						font-weight: 500;
+					}
+
+					&Text {
+						font-weight: 300;
+						display: flex;
+						flex-direction: column;
+					}
+				}
+			}
+
+			.checkout {
+				flex-basis: 33.33%;
+				background-color: hsl(0, 0%, 100%);
+				box-shadow: $box-shadow;
+				border-radius: system.$default-radius;
+				padding: system.$default-gap;
+				height: max-content;
+				color: hslac(#000);
+				font-size: 1.6rem;
+			}
+
+			.proceedButton {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: math.div(system.$default-gap, 2) system.$default-gap;
+				width: 100%;
+				min-height: 7rem;
+				background-color: hslac($clr-blue);
+				color: hslac(#fff);
+				border-radius: system.$default-radius;
+				border: none;
+				cursor: pointer;
+				transition: background-color 0.2s ease-in-out, color 0.2s;
+				font-size: 1.8rem;
+
+				&:hover {
+					background-color: hslac($clr-blue, 80%);
+					color: hslac(#fff, 95%);
+				}
+
+				& > * {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+				}
+
+				.buttonPrice {
+					gap: 0.5rem;
+				}
+
+				.buttonText {
+					gap: 1rem;
+
+					i {
+						font-size: 2.4rem;
+					}
+				}
+			}
+		}
+	}
+}

@@ -93,7 +93,7 @@
 
 				.message {
 					text-align: center;
-					margin-bottom: (system.$default-gap * 2);
+					margin-bottom: (system.$default-gap);
 
 					.header {
 						font-size: 3rem;
@@ -107,87 +107,23 @@
 					}
 				}
 
-				.form {
+				.switch {
+					margin-top: system.$default-gap;
+					font-size: 1.3rem;
+					display: flex;
+					justify-content: center;
+					gap: 0.5rem;
+
+					a {
+						transition: color 0.3s ease;
+						&:hover {
+							color: hslac($clr-blue, 90%);
+						}
+					}
+				}
+
+				.formWrapper {
 					width: 100%;
-
-					@include desktop {
-						width: 50%;
-					}
-
-					.formContainer {
-						width: 100%;
-
-						& > * {
-							margin-bottom: system.$default-gap;
-						}
-
-						.formLabel {
-							clip: rect(0 0 0 0);
-							clip-path: inset(50%);
-							height: 1px;
-							overflow: hidden;
-							position: absolute;
-							white-space: nowrap;
-							width: 1px;
-						}
-
-						.formInput {
-							border: 1px solid transparent;
-							box-shadow: $box-shadow;
-							width: 100%;
-							height: 5rem;
-							border-radius: system.$default-radius;
-							padding: system.$default-gap;
-							font-size: 1.4rem;
-							transition: border 0.2s ease-in-out;
-							outline: none;
-
-							&::placeholder,
-							&:-ms-input-placeholder,
-							&::-ms-input-placeholder {
-								/* Chrome, Firefox, Opera, Safari 10.1+ */
-								color: hslac($clr-grey);
-								opacity: 1; /* Firefox */
-							}
-
-							&:active,
-							&:focus,
-							&:focus-visible {
-								border: 1px solid hslac($clr-blue);
-							}
-						}
-
-						.formForgot {
-							text-align: right;
-							font-size: 1.4rem;
-						}
-
-						.formSubmit {
-							margin-top: system.$default-gap * 2;
-							.formButton {
-								display: flex;
-								align-items: center;
-								justify-content: center;
-								gap: math.div(system.$default-gap, 2);
-								padding: system.$default-gap;
-								height: 5rem;
-								width: 100%;
-								background-color: hslac($clr-red);
-								color: hslac(#fff);
-								border-radius: system.$default-radius;
-								border: none;
-								cursor: pointer;
-								transition: background-color 0.2s ease-in-out,
-									color 0.2s;
-								font-size: 1.4rem;
-
-								&:hover {
-									background-color: hslac($clr-red, 80%);
-									color: hslac(#fff, 95%);
-								}
-							}
-						}
-					}
 				}
 
 				.other {

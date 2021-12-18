@@ -95,8 +95,8 @@ export const DUMMY_ITEMS: iProduct[] = [
       image: '/images/products/donut.png',
       category: 'نان و شیرینی',
       catSlug: 'bread',
-      price: '۵۰،۰۰۰',
-      oldPrice: '۶۵،۰۰۰'
+      price: '50,000',
+      oldPrice: '65,000'
     },
     {
       id: '2',
@@ -104,8 +104,8 @@ export const DUMMY_ITEMS: iProduct[] = [
       image: '/images/products/rice.png',
       category: 'سوپر مارکتی',
       catSlug: 'supermarket',
-      price: '۱،۱۴۵،۰۰۰',
-      oldPrice: '۱،۱۸۰،۰۰۰'
+      price: '1,145,000',
+      oldPrice: '1,180,000'
       
     },
     {
@@ -114,7 +114,7 @@ export const DUMMY_ITEMS: iProduct[] = [
       image: '/images/products/heinz-bbq.png',
       category: 'سوپر مارکتی',
       catSlug: 'supermarket',
-      price: '۸۳،۰۰۰'
+      price: '83,000',
     },
     {
       id: '4',
@@ -122,8 +122,17 @@ export const DUMMY_ITEMS: iProduct[] = [
       image: '/images/products/lipton-ice-tea.png',
       category: 'سوپر مارکتی',
       catSlug: 'supermarket',
-      price: '۴۵،۰۰۰'
-    }
+      price: '45,000'
+    },
+      {
+      id: '5',
+      title: 'فندق',
+      image: '/images/products/fandogh/1.jpg',
+      category: 'سوپر مارکتی',
+      catSlug: 'supermarket',
+      price: '100,000',
+      oldPrice: '65,000'
+    },
   ];
 
 export const DUMMY_SPECIAL_ITEMS: iSpecial[] = [

@@ -24,8 +24,10 @@ const ProductPage: NextPage = () => {
       </Head>
       {selectedItem && (
         <Product
+          id={selectedItem.id}
           title={selectedItem.title}
           image={selectedItem.image}
+          gallery={selectedItem.gallery}
           price={selectedItem.price}
           oldPrice={selectedItem.oldPrice}
           description="blah blah"

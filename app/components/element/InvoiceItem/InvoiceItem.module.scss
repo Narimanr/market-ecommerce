@@ -7,6 +7,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	align-items: center;
 	padding: math.div(system.$default-gap, 2) system.$default-gap;
 	transition: box-shadow 0.3s ease;
 	box-shadow: $cart-item-shadow;
@@ -19,6 +20,10 @@
 		@include desktop {
 			margin-bottom: none;
 		}
+
+		@include print {
+			margin-bottom: none;
+		}
 	}
 
 	&:hover {
@@ -27,6 +32,12 @@
 
 	@include desktop {
 		flex-direction: row;
+	}
+
+	@include print {
+		flex-direction: row;
+		box-shadow: none;
+		border: 1px solid hslac($clr-grey, 30%);
 	}
 
 	.info {
@@ -39,6 +50,10 @@
 			flex-direction: row;
 		}
 
+		@include print {
+			flex-direction: row;
+		}
+
 		.imageBox {
 			min-height: 10rem;
 			min-width: 10rem;
@@ -48,17 +63,27 @@
 				min-height: 2.5rem;
 				min-width: 5rem;
 			}
+
+			@include print {
+				min-height: 2.5rem;
+				min-width: 5rem;
+			}
 		}
 
 		.text {
 			display: flex;
 			flex-direction: column;
 			gap: math.div(system.$default-gap, 2);
+
 			@include desktop {
 				gap: math.div(system.$default-gap, 4);
 			}
 
-			.category {
+			@include print {
+				gap: math.div(system.$default-gap, 2);
+			}
+
+			.quantity {
 				display: block;
 				font-size: 1.6rem;
 				color: hslac($clr-grey);
@@ -73,6 +98,10 @@
 				font-size: 2rem;
 
 				@include desktop {
+					font-size: 1.8rem;
+				}
+
+				@include print {
 					font-size: 1.8rem;
 				}
 			}
@@ -95,6 +124,12 @@
 			gap: (system.$default-gap * 2);
 		}
 
+		@include print {
+			flex-direction: row;
+			align-items: center;
+			gap: (system.$default-gap * 2);
+		}
+
 		.off {
 			display: block;
 		}
@@ -106,6 +141,10 @@
 			// line-height: 2.8rem;
 
 			@include desktop {
+				font-size: 1rem;
+			}
+
+			@include print {
 				font-size: 1rem;
 			}
 
@@ -122,6 +161,7 @@
 
 				.number {
 					font-size: 2rem;
+
 					@include desktop {
 						font-size: 2.4rem;
 					}

@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import Signup from '@/template/Signup/Signup';
 
 
 const SignupPage: NextPage = () => {
@@ -14,6 +15,8 @@ const SignupPage: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             
+
+            <Signup />
         </>
     )
 }
