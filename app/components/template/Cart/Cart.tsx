@@ -28,9 +28,8 @@ export default function Cart(props: PageProps) {
                         <span className={styles.header}>سبد خرید</span>
                         {props.items.map(item => {
                             return (
-                                <div className={styles.item}>
+                                <div className={styles.item} key={item.id}>
                                     <CartItem
-                                        key={item.id}
                                         id={item.id}
                                         title={item.title}
                                         price={item.price}
@@ -57,7 +56,7 @@ export default function Cart(props: PageProps) {
                                 <div className={styles.price}>
                                     <span >۱،۳۵۸،۰۰۰</span>
                                     <span className={styles.currency}>
-                                        تومان
+                                        تومانء
                                     </span>
                                 </div>
                                 <div className={styles.text}>

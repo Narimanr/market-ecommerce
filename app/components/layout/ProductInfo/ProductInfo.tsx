@@ -63,7 +63,7 @@ export default function ProductInfo(props: Props) {
                     <ul className={styles.breadcrumbs}>
                         <li>
                             <Link href="/">
-                                <a href="/">خانه</a>
+                                خانه
                             </Link>        
                         </li>
                         <li>
@@ -82,7 +82,7 @@ export default function ProductInfo(props: Props) {
                             {props.oldPrice}
                         </span>
                         {props.price}
-                        <span className={styles.currency}>تومان</span>
+                        <span className={styles.currency}>تومانء</span>
                     </div>
                 </div>
 
@@ -99,7 +99,7 @@ export default function ProductInfo(props: Props) {
                             </button>
                         </div>
                     </div>
-                    <Link href="/cart">
+                    <Link href="/cart" passHref>
                         <button className={styles.cartButton} onClick={handleClick}>
                             <i className='bx bxs-shopping-bag-alt bx-md'></i>
                             <span>اضافه کردن به سبد خرید</span>
@@ -114,9 +114,7 @@ export default function ProductInfo(props: Props) {
                     <div>
                         <span>دسته بندی:</span>
                         <Link href="/">
-                            <a href="/">
-                                {props.category}
-                            </a>
+                            {props.category}
                         </Link>
                     </div>
 

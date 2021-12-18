@@ -37,7 +37,7 @@ export default function InvoiceItem(props: iProduct) {
                     </span>
                     <div className={cardStyle.current}>
                         <span className={cardStyle.number}>{ props.price }</span>
-                        <span className={cardStyle.currency}>تومان</span>
+                        <span className={cardStyle.currency}>تومانء</span>
                     </div>
                 </div> 
             </div>

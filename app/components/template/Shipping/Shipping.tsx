@@ -84,7 +84,7 @@ export default function Shipping(props: PageProps) {
                                 <div className={styles.buttonPrice}>
                                     <span >۱،۳۵۸،۰۰۰</span>
                                     <span className={styles.currency}>
-                                        تومان
+                                        تومانء
                                     </span>
                                 </div>
                                 <div className={styles.buttonText}>

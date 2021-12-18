@@ -11,7 +11,7 @@ export default function InvoiceSummary(props: iInvoiceSummary) {
                     <div className={cardStyle.number}>
                         <span>{props.subtotal}</span>
                         <span className={cardStyle.currency}>
-                            تومان
+                            تومانء
                         </span>
                     </div>
                 </div>
@@ -20,7 +20,7 @@ export default function InvoiceSummary(props: iInvoiceSummary) {
                     <div className={cardStyle.number}>
                     <span>{props.discount}</span>
                         <span className={cardStyle.currency}>
-                            تومان
+                            تومانء
                         </span>
                     </div>
                 </div>
@@ -29,7 +29,7 @@ export default function InvoiceSummary(props: iInvoiceSummary) {
                     <div className={cardStyle.number}>
                         <span>{props.shipping}</span>
                         <span className={cardStyle.currency}>
-                            تومان
+                            تومانء
                         </span>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ export default function InvoiceSummary(props: iInvoiceSummary) {
                         <div className={cardStyle.number}>
                             <span>{props.total}</span>
                             <span className={cardStyle.currency}>
-                                تومان
+                                تومانء
                             </span>
                         </div>
             </div>
