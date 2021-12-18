@@ -20,14 +20,6 @@ const ShippingPage: NextPage = () => {
             
             {cartItems && (
                 <Shipping
-                    items={cartItems}
-                    invoiceId={FAKE_INVOICE.invoiceId}
-                    email={FAKE_INVOICE.email}
-                    name={FAKE_INVOICE.name}
-                    phone={FAKE_INVOICE.phone}
-                    time={FAKE_INVOICE.time}
-                    date={FAKE_INVOICE.date}
-                    address={FAKE_INVOICE.address}
                     subtotal={FAKE_INVOICE.subtotal}
                     shipping={FAKE_INVOICE.shipping}
                     discount={FAKE_INVOICE.discount}
